@@ -30,6 +30,3 @@ Thumbs.db
 .env
 .env.local
 .env.*.local
-
-# Npm package files
-package-lock.json
