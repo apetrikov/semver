@@ -3,7 +3,6 @@
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
-    "@semantic-release/exec": "^6.0.3",
     "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.3.0",
     "husky": "^8.0.0",
@@ -30,14 +29,7 @@
     "plugins": [
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
-      "@semantic-release/github",
-      [
-        "@semantic-release/exec",
-        {
-          "prepareCmd": "set-version ${nextRelease.version}",
-          "publishCmd": "publish-package"
-        }
-      ]
+      "@semantic-release/github"
     ]
   }
 }
