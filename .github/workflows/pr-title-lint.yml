@@ -10,7 +10,7 @@ concurrency:
 
 jobs:
   pr-title-lint:
-    name: Ensure proper PR title
+    name: Conventional commit PR title
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -24,7 +24,7 @@ jobs:
       - name: Install dependencies
         run: pnpm add commitlint
 
-      - name: Print Title of PR
+      - name: Check PR title
         env:
           TITLE: ${{ github.event.pull_request.title }}
         run: echo "$TITLE" | pnpm exec commitlint
