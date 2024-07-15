@@ -1,0 +1,27 @@
+name: PR checks
+
+on:
+  pull_request:
+    types: [opened, reopened, edited, synchronize]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.number }}
+  cancel-in-progress: true
+
+jobs:
+  pr-title-lint:
+    name: Ensure proper PR title
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Print Title of PR
+        env:
+          TITLE: ${{ github.event.pull_request.title }}
+        run: echo The Title of your PR is $TITLE
