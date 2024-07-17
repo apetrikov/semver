@@ -21,3 +21,4 @@ jobs:
           # These are regex patterns auto-wrapped in `^ $`.
           scopes: |
             JIRA-\d+
+          requireScope: true
