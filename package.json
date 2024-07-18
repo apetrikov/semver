@@ -15,7 +15,8 @@
   },
   "scripts": {
     "prepare": "husky install",
-    "semantic-release": "semantic-release"
+    "release": "semantic-release",
+    "release:dry-run": "semantic-release --dry-run"
   },
   "version": "0.0.0-development",
   "repository": {
